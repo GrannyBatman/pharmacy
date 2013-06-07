@@ -1,3 +1,60 @@
 body{
 	background: #edf8f9;
 }
+.main_wrap {
+	background: #dff2f4;
+}
+.search_form input[type="text"]{
+	border: 6px solid #fff;
+	background: #49b3bf;
+}
+.search_form input[type="text"]:focus{
+	border-color: #49b3bf;
+}
+.search_form input[type="text"]:focus + .search_button {
+	background: none;
+}
+.product_nav td {
+	background: #49b3bf;
+}
+.search_form .example, .search_form .example a {
+	color: #008993;
+}
+.product_nav td > a {
+	font-size: 10px;
+	text-shadow: none;
+	background: none;
+}
+.arise_box {
+	background: #fff;
+}
+.results_list .name {
+	color: #2d2d2d;
+	font-family: "Arial";
+	font-size: 13px;
+}
+.small_popup_box {
+	color: #008993;
+	font-size: 13px;
+}
+.basket_box > a {
+	background: #ef018d;
+	padding: 6px 20px 6px 20px;
+	font-family: "Tahoma";
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
+}
+.phone_button img {
+	margin-left: -10px;
+	margin-right: 6px;
+}
+.phone_button{
+	background: url(../proj_2/img/bg_sprite1.png) repeat-x;
+	padding: 0 12px 0 15px;
+	font-size: 20px;	
+}
+.phone_button:hover {
+	background-position: 0 0;
+}
