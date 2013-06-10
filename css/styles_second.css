@@ -58,3 +58,15 @@ body{
 .phone_button:hover {
 	background-position: 0 0;
 }
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	background: #49b3bf;
+}
+.mCSB_scrollTools .mCSB_draggerRail {
+	background: #edf8f9;
+}
+.small_popup.orange .title_popup {
+	background: #ef018d;
+}
+.small_popup.orange {
+	border-color: #ef018d;
+}
