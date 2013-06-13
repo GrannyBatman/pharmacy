@@ -38,7 +38,7 @@ body{
 }
 .arise_box {
 	background: #fff;
-	top: 30px;
+	top: 47px;
 }
 .results_list .name {
 	color: #2d2d2d;
@@ -49,6 +49,7 @@ body{
 .small_popup_box {
 	color: #008993;
 	font-size: 13px;
+	float: left;
 }
 .basket_box > a {
 	background: #ef018d;
@@ -60,6 +61,7 @@ body{
 	color: #fff;
 	text-transform: uppercase;
 	margin-left: 10px;
+	float: left;
 }
 .button {
 	background: #ef018d;
@@ -156,7 +158,7 @@ body{
 	width: 215px;
 }
 .product_nav_box {
-	margin: 17px 0 0 0;
+	padding-top: 17px;
 }
 .paginator a {
 	background: url(../proj_2/img/img_sprite.png) no-repeat -141px -79px;
@@ -178,6 +180,7 @@ body{
 	right: -1px;
 }
 .small_popup {
+	top: 29px;
 	border:none;
 	padding: 4px;
 }
@@ -186,6 +189,7 @@ body{
 }
 .small_popup_box_reg {
 	color: #008993;
+	float: left;
 }
 .main_wrap {
 	border-left: 1px solid #dff2f4;
@@ -198,6 +202,7 @@ body{
 }
 .basket_box {
 	margin: 6px 0px 0;
+	zoom:1;
 }
 .small_popup_box b{
 	letter-spacing: -1px;
@@ -374,10 +379,17 @@ body{
 .breadcrumbs a {
 	color:#ef018d;
 }
-.breadcrumbs {
+.breadcrumbs{
 	margin: 2px 0 0 14px;
 	position: relative;
 	z-index: 2;
+}
+.breadcrumbs.second {
+	margin: 2px 0 0 0px;
+	position: relative;
+	z-index: 2;
+	background: #fff;
+	padding: 0 0 23px 14px;
 }
 .separator {
 	border-top: 1px solid #d5d5d5;
@@ -425,4 +437,145 @@ body{
 }
 .category_list.second dd:hover .fade_help {
 	display: inline-block;
+	background-position: -323px -163px;
+}
+.place_order_button {
+	background: url(../proj_2/img/img_sprite.png) no-repeat 0 -1826px;
+}
+.middle_wrap_sec{
+	background: #fff;
+}
+#middle.border {
+	margin: 0 7px 0 7px;
+	border-top: 1px solid #d5d5d5;
+	padding-top: 18px;
+}
+#content.second {
+	margin-left: 116px;
+}
+.form_style {
+	background: #edf8f9;
+}
+.form_style:hover{
+	background: #dff2f4;
+}
+.form_style .color input[type="text"], .form_style .color input[type="password"], .form_style .color .inp_text {
+	color: #ef018d;
+}
+.authorization_button {
+	height: 28px;
+	background: url(../proj_2/img/img_sprite.png) no-repeat 0 -1174px;
+}
+.reg_info {
+	color: #000;
+	font-style: normal;
+}
+.reg_info a{
+	color:#ef018d;
+}
+.registration_button {
+	background: url(../proj_2/img/img_sprite.png) no-repeat 0 -1926px;
+	height: 28px;
+	width: 164px;
+}
+.steps_second{
+	overflow: hidden;
+	margin-left: 14px;
+}
+.steps_second li {
+	float: left;
+	border-bottom: 5px solid #edf8f9;
+	width: 32%;
+	padding: 0 7px 7px 3px;
+}
+.steps_second li:hover, .steps_second li.active {
+	border-bottom: 5px solid #49b3bf;
+}
+.steps_second li.hover{
+	border-bottom: 5px solid #aadce1;
+}
+.steps_second li:hover a, .steps_second li.active a{
+	color: #2d2d2d;
+}
+.steps_second li a, .steps_second li.hover a{
+	color: #ababab;
+	font-family: "Verdana";
+	font-size: 10px;
+	text-decoration: none;
+}
+.big_table td .check_item{
+	color: #2d2d2d;
+	font-family: "Calibri";
+	font-size: 13px;
+}
+.big_table .name a {
+	color: #2d2d2d;
+}
+.big_table .set_aside {
+	color: #ef018d;
+}
+.big_table .set_aside:hover {
+	color: #2d2d2d;
+}
+.continue_button {
+	background: url(../proj_2/img/img_sprite.png) no-repeat 0 -2155px;
+	height: 28px;
+	width: 110px;
+}
+.price_info .price {
+	margin: 1px 0 0 -28px;
+}
+.price_info .continue_button.reg_but{
+	margin-right: 106px;
+}
+.no_item {
+	color:#00737d;
+}
+.price_info {
+	margin: 13px 7px 0 7px;
+}
+.delivery_list input[type="radio"] + b, .appraisal_list input[type="radio"] + b {
+	height: 21px;
+	width: 21px;
+	background: url(../proj_2/img/img_sprite.png) no-repeat -141px -111px;
+}
+.radio_style li {
+	float: none;
+}
+.delivery_list > li {
+	width: 92%;
+	padding: 5px 0 5px 50px;
+}
+.delivery_list input[type="radio"] + b.pay{
+	background: url(../proj_2/img/img_sprite.png) no-repeat -141px -27px;
+	top: 8px;
+}
+.delivery_list input[type="radio"]:checked + b.pay, .appraisal_list input[type="radio"]:checked + b.pay{
+	background-position: -185px -27px;
+}
+.delivery_list_second{
+	overflow: hidden;
+}
+.delivery_list_second li{
+	float: left;
+}
+.delivery_list.radio_style{
+	color: #818181;
+	font-family: "Arial";
+	font-size: 12px;
+}
+.delivery_list h3 {
+	color: #2d2d2d;
+}
+.pay_second{
+	margin: 8px 0 0 0;
+	display: inline-block;
+	width: 400px;
+}
+.pay_second img{
+	display: inline-block;
+	margin-left: 20px;
+}
+.reg_but {
+	margin: 22px 10px 0 0;
 }
