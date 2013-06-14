@@ -13,8 +13,11 @@
 	<script type="text/javascript" src="../js/jquery.selectbox-0.2.js"></script>
 	<script type="text/javascript" src="../js/jquery.mCustomScrollbar.min.js"></script>
 	<script type="text/javascript" src="../js/ajaxupload.js"></script> 
+	<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
 	
 	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	
 </head>
 <body>
 	<!-- start mainarea -->
@@ -1722,6 +1725,7 @@
 					</ul>
 
 				</div>
+
 			<!-- end header -->
 			<!-- start middle -->
 			<div class="middle_wrap_sec">
@@ -1731,39 +1735,42 @@
 						<li class="active"><a href="#">ВЫБОР СПОСОБА ДОСТАВКИ И ОПЛАТЫ</a></li>
 						<li><a href="#">КОНТАКТНЫЕ ДАННЫЕ</a></li>
 					</ul>
+					<div class="content_bg_wrap">
+						<ul class="delivery_list radio_style">
+							<li>
+								<label><input type="radio" name="delivery" checked /><b></b></label>
+								<h3>КУРЬЕРСКАЯ ДОСТАВКА</h3>
+								<p>Доставка заказов, полученных до 16:00, проводится на следующий рабочий день нашего интернет-магазина. О точном времени доставки вам сообщит 
+								менеджер при уточнении заказа.</p>
+								<ul class="delivery_list_second">
+									<li>
+										<label><input type="radio" name="pay_radio"><b class="pay"></b></label>
+										<span>Я заплачу курьеру наличными</span>
+									</li>
+									<li>
+										<label><input type="radio" name="pay_radio"><b class="pay"></b></label>
+										<span>Я расчитаюсь банковской картой</span><br>
+										<span class="pay_second">мы принимаем к оплате <img src="img/pay_img_second.png" alt=""></span>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<label><input type="radio" name="delivery" /><b></b></label>
+								<h3>САМОВЫВОЗ</h3>
+								<p>Вы можете забрать купленный товар в нашем магащине, расположенном по адресу: г.Москва, ул.Бутлерова, д.12. 
+								Аптека работает круглосуточно</p>
+								<div id="newMap" class="delivery_list map">
+									
+								</div>
+							</li>
+						</ul>
+						<!-- <a href="#" class="button xl last_step">ЗАВЕРШАЮЩИЙ ШАГ</a> -->
+						<a href="#" class="continue_button reg_but"></a>
+						<div class="clear"></div>
+					</div>
 
-					<ul class="delivery_list radio_style">
-						<li>
-							<label><input type="radio" name="delivery" checked /><b></b></label>
-							<h3>КУРЬЕРСКАЯ ДОСТАВКА</h3>
-							<p>Доставка заказов, полученных до 16:00, проводится на следующий рабочий день нашего интернет-магазина. О точном времени доставки вам сообщит 
-							менеджер при уточнении заказа.</p>
-							<ul class="delivery_list_second">
-								<li>
-									<label><input type="radio" name="pay_radio"><b class="pay"></b></label>
-									<span>Я заплачу курьеру наличными</span>
-								</li>
-								<li>
-									<label><input type="radio" name="pay_radio"><b class="pay"></b></label>
-									<span>Я расчитаюсь банковской картой</span><br>
-									<span class="pay_second">мы принимаем к оплате <img src="img/pay_img_second.png" alt=""></span>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<label><input type="radio" name="delivery" /><b></b></label>
-							<h3>САМОВЫВОЗ</h3>
-							<p>Вы можете забрать купленный товар в 
-								нашем магащине, расположенном по 
-								адресу: г.Москва, ул.Машкова, д.6 Мы 
-								работаем с 09-00 до 18-00, суббота с 
-								10-00 до 17-00, воскресенье - выходной.</p>
-						</li>
-					</ul>
-
-					<!-- <a href="#" class="button xl last_step">ЗАВЕРШАЮЩИЙ ШАГ</a> -->
-					<a href="#" class="continue_button reg_but"></a>
-					<div class="clear"></div>
+					
+					
 
 				</div>
 			</div>
