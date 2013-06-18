@@ -45,7 +45,7 @@ body{
 	font-family: "Arial";
 	font-size: 13px;
 	margin: 8px 0 15px 8px;
-	display: inline-block;
+	/*display: inline-block;*/
 }
 .small_popup_box {
 	color: #008993;
@@ -61,7 +61,7 @@ body{
 	text-decoration: none;
 	color: #fff;
 	text-transform: uppercase;
-	margin-left: 10px;
+	margin-left: 15px;
 	float: left;
 }
 .button {
@@ -142,11 +142,15 @@ body{
 .section_list .have_item, .nomenclature_box .section_list li:hover .change, .nomenclature_box .section_list li .change {
 	background: url(../proj_2/img/img_sprite.png) no-repeat -376px -52px;
 }
-.small_popup_box_reg{	
+.small_popup_box_reg {	
 	font-size: 13px;
 	display: inline-block;
 	padding-bottom: 20px;
 	margin-bottom: -20px;
+	color: #008993;
+	float: left;
+	font-weight: bold;
+	line-height: 26px;
 }
 .small_popup_box_reg a{
 	color: #008993;
@@ -188,10 +192,6 @@ body{
 .section_list li {
 	width: 93%;
 }
-.small_popup_box_reg {
-	color: #008993;
-	float: left;
-}
 .main_wrap {
 	border-left: 1px solid #dff2f4;
 	border-right: 1px solid #dff2f4;
@@ -207,7 +207,9 @@ body{
 }
 .small_popup_box b{
 	letter-spacing: -1px;
-	margin-right: -7px
+	margin-right: -7px;
+	line-height: 26px;
+	display: inline-block;
 }
 .search_form {
 	margin: 12px 82px 0 0;
@@ -765,21 +767,10 @@ body{
 .section_list li:hover .small_popup {
 	display: none;
 }
-.name.info .name_info{
-	margin: 0px 0 0 5px;
-	position: relative;
-	top: 2px;
-	right: -1px;
-	display: inline-block;
-	height: 13px;
-	width: 13px;
-	float: right;
-	background: url(../proj_2/img/img_sprite.png) no-repeat -759px 0px;
-}
-.name.info .name_info.first{
+/*.name.info .name_info.first{
 		top: -14px;
 		margin: 0px 0px -13px 5px;
-}
+}*/
 .fade_help.green_small{
 	display: none;
 	width: 42px;
@@ -834,4 +825,228 @@ body{
 }
 .attention_box a {
 	color:#ef018d;
+}
+.attention_box.bottom{
+	color: #2d2d2d;
+	font-family: "Arial";
+	font-size: 12px;
+	margin: 11px 8px 0 24px;
+}
+.header_fixed.product .search_form {
+	margin: 0 3px 0 0;
+	float: left;
+}
+.header_fixed .basket_box {
+	margin: 7px 10px 0 0;
+}
+.header_fixed.product .basket_box > a {
+	margin-left: 10px;
+	float: none;
+}
+.product_preview {
+	float: left;
+	margin: 2px 0px 0 0px;
+}
+.product_preview .price_box {
+	float: left;
+	text-align: center;
+	width: 90px;
+}
+.product_preview .name {
+	margin: 2px 3px 0 0;
+}
+.arrow.up.search{
+	background: url(../proj_2/img/img_sprite.png) no-repeat -423px -52px;
+	position: absolute;
+	top: 18px;
+	right: 41px;
+	display: none;
+}
+.search_form.disease input[type="text"]:focus + .close_filter.black + .arrow.up.search{
+	display: inline-block;
+}
+.search_form.disease input[type="text"]:focus + .close_filter.black  + .arrow.up.search + .search_button {
+	background: url(../proj_2/img/img_sprite.png) no-repeat -376px -111px;
+}
+.close_filter.black {
+	display: none;
+	position: absolute;
+	top: 16px;
+	right: 57px;
+	background: url(../proj_2/img/img_sprite.png) no-repeat -520px -27px;
+}
+.close_filter.black:hover {
+	background-position: -563px -27px;
+}
+.search_form.disease input[type="text"]:focus + .close_filter.black{
+	display: inline-block;
+}
+.search_form.disease input[type="text"]:focus + .close_filter.black  + .arrow.up.search + .search_button + .small_popup_right_wrap {
+	display: block;
+}
+.small_popup_right.help_list_wrap{
+	width: 235px;
+	height: 151px;
+	background: #fff;
+	display: block;
+	z-index: 15;
+	padding: 5px 3px 0 0;
+}
+.section_list.disease.help_list li{
+	width: 90%;
+	padding-left: 10px;
+	overflow: hidden;
+}
+.help_list li a{
+	display: block;
+	color: #000;
+	font-family: "Arial";
+	font-size: 13px;
+	text-decoration: none;
+}
+.help_list li:hover a{
+	color: #fff;
+}
+.section_list.disease.help_list li .fade_help.green_small{
+	display: none;	
+}
+.section_list.disease.help_list li:hover .fade_help.green_small{
+	display: block;
+}
+.section_list.disease.help_list li .fade_help.white_small{
+	background: url(../proj_2/img/img_sprite.png) no-repeat -409px -163px;
+	width: 41px;
+}
+.section_list.disease.help_list li:hover .fade_help.white_small{
+	display: none;
+}
+.small_popup_right_wrap{
+	display: none;
+	position: absolute;
+	right: 0px;
+	top: 40px;
+	z-index: 15;
+}
+.arise_box .content_bg_top.right {
+	padding-left: 34px;
+	float: right;
+	width: 315px;
+	text-align: left;
+	color: #2d2d2d;
+	font-family: "Arial";
+	font-size: 13px;
+	position: relative;
+}
+.name_info.product_name{
+	position: relative;
+	top: 8px;
+	right: 8px;
+	display: inline-block;
+	height: 14px;
+	width: 15px;
+	float: right;
+	background: url(../proj_2/img/img_sprite.png) no-repeat -705px 0px;
+}
+.content_bg_top.search_popup{
+	position: absolute;
+	top: 29px;
+	right: 0;
+	width: 250px;
+	height: 130px;
+	z-index: 15;
+	padding: 0;
+}
+.content_bg_top.search_popup .title_popup {
+	margin-top: 0;
+	font-size: 12px;
+	letter-spacing: 0;
+}
+.content_bg_top.search_popup .popup_info {
+	font-weight: normal;
+}
+.publication p {
+	text-align: left;
+}
+.publication h3 {
+	text-align: left;
+}
+.slider .slides li {
+	text-align: center;
+}
+.publication {
+	position: relative;
+}
+.slides_control{
+	position: absolute;
+	top: 0px;
+	left: -21px;
+}
+.slides_control li {
+	margin: 8px 0 0 0;
+}
+.slides_control li:first-child {
+	margin: 0;
+}
+.slides_control li a {
+	display: inline-block;
+	padding: 2px 3px 2px 3px;
+}
+.slides_control li.active a {
+	border:1px solid #49b3bf;
+}
+.help_mes{
+	position: absolute;
+	top: 13px;
+	right: 37px;
+	color: #999;
+	font-family: "Arilal";
+	font-size: 13px;
+	display: none;
+}
+.search_form input[type="text"]:focus + .help_mes {
+	display: block;
+}
+
+
+
+/*hint_results*/
+
+.hint_results .name_box{
+	position: relative;
+	margin: 8px 0 15px 8px;
+}
+.hint_results .name_box .name{
+	float: left;
+	max-width: 295px;
+	margin: 0;
+}
+.hint_results .name_box .name_info{
+	float: left;
+}
+
+.hint_results .name_box .up{
+	float: left;
+	margin: 9px 0 0 5px;
+}
+.hint_results .name_box .fade_help{
+	right: 22px;
+}
+
+.hint_results .name_info{
+	margin: 0px 0 0 5px;
+	position: relative;
+	top: 2px;
+	right: -1px;
+	display: inline-block;
+	height: 13px;
+	width: 13px;
+	float: right;
+	background: url(../proj_2/img/img_sprite.png) no-repeat -759px 0px;
+}
+
+.hint_results .name_box.active .name{
+	max-width: 282px;
+}
+.hint_results .name_box.active .fade_help{
+	right: 33px;
 }

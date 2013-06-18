@@ -476,6 +476,7 @@ $(document).ready(function(){
           $(this).find('.close_all').show();
           $(this).find('.close_all .txt').text('Показать все результаты ('+ (( lis.length ) - 6) +')');
           $('.up', $this).css('display', 'none');
+          $('.name_box', close).removeClass('active');
         }
 
       })
@@ -494,10 +495,12 @@ $(document).ready(function(){
           li.slideDown();
           $('.txt', close).text('Свернуть результаты');
           $('.up', close).css('display', 'inline-block');
+          $('.name_box', close).addClass('active');
         } else {
           li.slideUp();
           $('.txt', close).text('Показать все результаты ('+ (( $('li', listLi).length ) - 6) +')');
           $('.up', close).css('display', 'none');
+          $('.name_box', close).removeClass('active');
         }
 
       })
