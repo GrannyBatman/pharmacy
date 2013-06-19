@@ -424,7 +424,8 @@ body{
 	margin: -40px 0 -10px 0px;
 }
 .category_list.second dd:hover {
-	background: none;
+	background: #fff;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
 }
 .category_list.second dd:hover a {
 	color: #ef018d;
@@ -529,7 +530,7 @@ body{
 	margin: 1px 0 0 -28px;
 }
 .price_info .continue_button.reg_but{
-	margin-right: 106px;
+	margin-right: 86px;
 }
 .no_item {
 	color:#00737d;
@@ -795,8 +796,12 @@ body{
 }
 .search_info_disease_wrap{
 	background: #edf8f9;
-	padding:7px 5px 0 0;
-	position: relative;
+	padding: 7px 5px 0 0;
+	width: 325px;
+	position: absolute;
+	height: 230px;
+	top: 40px;
+	left: 324px;
 }
 .search_info_disease{
 	background: #edf8f9;
@@ -1017,7 +1022,7 @@ body{
 }
 .hint_results .name_box .name{
 	float: left;
-	max-width: 295px;
+	max-width: 275px;
 	margin: 0;
 }
 .hint_results .name_box .name_info{
@@ -1029,7 +1034,7 @@ body{
 	margin: 9px 0 0 5px;
 }
 .hint_results .name_box .fade_help{
-	right: 22px;
+	right: 41px;
 }
 
 .hint_results .name_info{
@@ -1045,8 +1050,25 @@ body{
 }
 
 .hint_results .name_box.active .name{
-	max-width: 282px;
+	max-width: 275px;
 }
 .hint_results .name_box.active .fade_help{
-	right: 33px;
+	right: 39px;
+}
+.section_list.disease.list{
+	margin-top: 10px;
+}
+.section_list.disease.list li{
+	line-height: 20px;
+}
+.section_list.disease.list li .small_popup{
+	top:22px;
+}
+.product_list.white {
+	padding: 10px 0 10px 35px;
+	margin: 0 0 -23px 0;
+	background: #fff;
+}
+.section_list.disease.list li .small_popup.disease{
+	top:-24px;
 }
