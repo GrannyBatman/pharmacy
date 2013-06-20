@@ -476,7 +476,6 @@ $(document).ready(function(){
           $(this).find('.close_all').show();
           $(this).find('.close_all .txt').text('Показать все результаты ('+ (( lis.length ) - 6) +')');
           $('.up', $this).css('display', 'none');
-          $('.name_box', close).removeClass('active');
         }
 
       })
@@ -495,12 +494,10 @@ $(document).ready(function(){
           li.slideDown();
           $('.txt', close).text('Свернуть результаты');
           $('.up', close).css('display', 'inline-block');
-          $('.name_box', close).addClass('active');
         } else {
           li.slideUp();
           $('.txt', close).text('Показать все результаты ('+ (( $('li', listLi).length ) - 6) +')');
           $('.up', close).css('display', 'none');
-          $('.name_box', close).removeClass('active');
         }
 
       })
@@ -971,7 +968,7 @@ $(document).ready(function(){
             returnDeletes();
             showArrow(arrow, delArr, delList);
             showScroll(orderList, scrollBox, scrollBoxHeigth);
-
+            hideLastDelete(delArr);
 
           })
         }
@@ -1082,11 +1079,26 @@ $(document).ready(function(){
       }
     }
 
+    function hideLastDelete(array){
+        var delLi = $('.basket_box .deleted_list li');
+        delLi.css('display', '');
+
+        for( var i = 0; i < delLi.length; i++ ){
+          if ( delLi.eq(i).attr('itemId') == array[array.length-1].itemId ){
+            delLi.eq(i).hide();
+          }
+        }
+    }
+
 
     function lastDelCheck(target, array){
+
       if (array.length == 0){
         target.text('');
       } else {
+
+        hideLastDelete(array);
+
         target.text(array[array.length-1].name);
         target.attr('itemId', array[array.length-1].itemId);
       }
@@ -1112,7 +1124,6 @@ $(document).ready(function(){
       for (var i = 0; i < $('li', list).length; i++){
         needHeight = needHeight + $('li', list).eq(i).outerHeight(true);
       }
-      console.log('needHeight: ' + needHeight + ' height: ' + height);
       
       if ( needHeight < height ){
         scroll.css('height', 'auto');

@@ -800,8 +800,8 @@ body{
 	width: 325px;
 	position: absolute;
 	height: 230px;
-	top: 40px;
-	left: 324px;
+	top: 31px;
+	left: -296px;
 }
 .search_info_disease{
 	background: #edf8f9;
@@ -941,6 +941,7 @@ body{
 	font-family: "Arial";
 	font-size: 13px;
 	position: relative;
+	cursor: pointer;
 }
 .name_info.product_name{
 	position: relative;
@@ -976,15 +977,28 @@ body{
 	text-align: left;
 }
 .slider .slides li {
+	position: relative;
 	text-align: center;
+	float: left;
+	width: 303px;
+	
+}
+.slider .slides li.active img{
+	border:1px solid #49b3bf;
+	padding: 5px;
 }
 .publication {
 	position: relative;
+	margin-right: 21px;
+	overflow: hidden;
+}
+.slider .slides {
+	width: 9999px;
 }
 .slides_control{
 	position: absolute;
 	top: 0px;
-	left: -21px;
+	left: 0px;
 }
 .slides_control li {
 	margin: 8px 0 0 0;
@@ -1019,6 +1033,8 @@ body{
 .hint_results .name_box{
 	position: relative;
 	margin: 8px 0 15px 8px;
+	cursor: pointer;
+	display: inline-block;
 }
 .hint_results .name_box .name{
 	float: left;
@@ -1071,4 +1087,26 @@ body{
 }
 .section_list.disease.list li .small_popup.disease{
 	top:-24px;
+}
+.basket_button {
+	background: url(../proj_2/img/img_sprite.png) no-repeat 0 -1270px;
+}
+#middle.border.pub {
+	margin: 37px 0 0 0;
+	padding-top: 10px;
+}
+.repeat_order_button {
+	background: url(../proj_2/img/img_sprite.png) no-repeat 0 -2042px;
+}
+.move_block .fade_help {
+	background: url(../proj_2/img/img_sprite.png) no-repeat -376px -303px;
+}
+.move_block .fade_help.left {
+	background-position: -376px -337px;
+}
+.info_list h3 a, .info_list_alt a {
+	color: #ef018d;
+}
+.deleted_list li:hover {
+	background: #ef018d;
 }
