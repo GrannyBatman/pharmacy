@@ -170,8 +170,12 @@ body{
 	height: 12px;
 	width: 12px;
 }
-.close_filter {
+.close_filter_second, .close_filter {
 	background: url(../proj_2/img/img_sprite.png) no-repeat -410px 0;
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+	float: right;
 }
 .phone_box p {
 	color: #000;
@@ -624,10 +628,10 @@ body{
 .product_filters select + .sbHolder {
 	border: 1px solid #49b3bf;
 }
-.close_filter.blue{
+.close_filter_second.blue , .close_filter .blue{
 	background: url(../proj_2/img/img_sprite.png) no-repeat -410px -27px;
 }
-.close_filter.blue:hover{
+.close_filter_second.blue:hover, .close_filter.blue:hover {
 	background-position: -449px -27px;
 }
 .title_small.product_title.catalog{
@@ -799,9 +803,10 @@ body{
 	padding: 7px 5px 0 0;
 	width: 325px;
 	position: absolute;
-	height: 230px;
+	height: 193px;
 	top: 31px;
 	left: -296px;
+	z-index: 15;
 }
 .search_info_disease{
 	background: #edf8f9;
@@ -809,7 +814,7 @@ body{
 	font-family: "Tahoma";
 	font-size: 11px;
 	line-height: 16px;
-	height: 200px;
+	height: 168px;
 	padding: 8px 0px 5px 15px;
 }
 .search_info_disease p{
@@ -822,7 +827,7 @@ body{
 	font-family: "Arial";
 	font-size: 13px;
 }
-.search_info_disease_wrap .close_filter {
+.search_info_disease_wrap .close_filter_second, .search_info_disease_wrap .close_filter {
 	margin: 0 0 0 0;
 }
 .section_list.disease li {
@@ -867,26 +872,26 @@ body{
 	right: 41px;
 	display: none;
 }
-.search_form.disease input[type="text"]:focus + .close_filter.black + .arrow.up.search{
+.search_form.disease input[type="text"]:focus + .close_filter.black + .arrow.up.search, .search_form.disease input[type="text"]:focus + .close_filter_second.black + .arrow.up.search{
 	display: inline-block;
 }
-.search_form.disease input[type="text"]:focus + .close_filter.black  + .arrow.up.search + .search_button {
+.search_form.disease input[type="text"]:focus + .close_filter.black  + .arrow.up.search + .search_button, .search_form.disease input[type="text"]:focus + .close_filter_second.black  + .arrow.up.search + .search_button, {
 	background: url(../proj_2/img/img_sprite.png) no-repeat -376px -111px;
 }
-.close_filter.black {
+.close_filter.black, .close_filter_second.black {
 	display: none;
 	position: absolute;
 	top: 16px;
 	right: 57px;
 	background: url(../proj_2/img/img_sprite.png) no-repeat -520px -27px;
 }
-.close_filter.black:hover {
+.close_filter.black:hover, .close_filter_second.black:hover {
 	background-position: -563px -27px;
 }
-.search_form.disease input[type="text"]:focus + .close_filter.black{
+.search_form.disease input[type="text"]:focus + .close_filter.black, .search_form.disease input[type="text"]:focus + .close_filter_second.black{
 	display: inline-block;
 }
-.search_form.disease input[type="text"]:focus + .close_filter.black  + .arrow.up.search + .search_button + .small_popup_right_wrap {
+.search_form.disease input[type="text"]:focus + .close_filter.black  + .arrow.up.search + .search_button + .small_popup_right_wrap,  .search_form.disease input[type="text"]:focus + .close_filter_second.black  + .arrow.up.search + .search_button + .small_popup_right_wrap{
 	display: block;
 }
 .small_popup_right.help_list_wrap{
@@ -1050,7 +1055,7 @@ body{
 	margin: 9px 0 0 5px;
 }
 .hint_results .name_box .fade_help{
-	right: 41px;
+	right: 18px;
 }
 
 .hint_results .name_info{
@@ -1066,10 +1071,10 @@ body{
 }
 
 .hint_results .name_box.active .name{
-	max-width: 275px;
+	max-width: 262px;
 }
 .hint_results .name_box.active .fade_help{
-	right: 39px;
+	right: 28px;
 }
 .section_list.disease.list{
 	margin-top: 10px;
@@ -1109,4 +1114,7 @@ body{
 }
 .deleted_list li:hover {
 	background: #ef018d;
+}
+.fade_help.white_small.none{
+	right: 0;
 }

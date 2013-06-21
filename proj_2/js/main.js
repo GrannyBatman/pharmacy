@@ -27,7 +27,7 @@ $(document).ready(function(){
         myMap.geoObjects.add(myPlacemark);
 
     }
-
+// всплыв попап на имени 2
     $(".hintBoxInfo").each(function() {
 
         var $this = $(this),
@@ -55,64 +55,7 @@ $(document).ready(function(){
         })
 
     });
-
-    // $('.itemSlider').each(function(){
-
-    //     var $this = $(this),
-    //         $viewImgBlock = $('.slides', $this),
-    //         $controlBlock = $('.slides_control', $this),
-    //         $control = $('.slides li', $this),
-    //         $viewImg = $('.slides_control li', $this),
-    //         liWidth = $('.slides li', $this).first().width(),
-    //         controlLength = $control.length,
-    //         block = false,
-    //         pos = 0,
-    //         speed = 400;
-
-    //     $control.first().addClass('active');
-    //     $viewImg.first().addClass('active');      
-    //     console.log(pos);
-
-    //     $control.click(function(){
-
-    //         if( block ) return false; 
-    //         block = true;
-
-    //         pos = $this.index();
-
-    //         navigate();
-
-    //         return false;
-    //     });
-
-    //     function navigate() {
-    //         console.log(pos);
-    //         $viewImgBlock.animate({
-    //             'left': - liWidth * pos
-    //         }, speed, 'swing', function(){
-    //             block = false;
-    //         });
-    //         $control
-    //             .eq(pos).addClass('active')
-    //             .siblings('.active').removeClass('active');
-    //     }
-
-    //     function pressNextTab(){
-            
-    //         if( pos == controlLength - 1 ) {
-    //             $control.eq(0).click();    
-    //         } else {
-    //             $control.eq(pos).next().click();
-    //         }
-                  
-    //     }
-    
-    //     var int = setInterval(pressNextTab, 2000);  
-
-    //     console.log(pos);
-    // })
-
-
+// слайдер на продуктах 2
     $('.itemSlider').each(function(){
 
         var $self = $(this),
@@ -173,15 +116,102 @@ $(document).ready(function(){
                   
         }
     
-    var int = setInterval(pressNextTab, 5000);
+        var int = setInterval(pressNextTab, 5000);
 
-    $self.mouseenter(function(){
-         blockInt = true;
-    })
-    $self.mouseout(function(){
-         blockInt = false;
-    })
+        $self.mouseenter(function(){
+             blockInt = true;
+        })
+        $self.mouseout(function(){
+             blockInt = false;
+        })
 
     });
+
+// search by disease 
+    // иконка инфо
+
+    $(".nameBoxInfo").each(function() {
+
+        var $this = $(this),
+            ico = $('.name_info', $this),
+            popup = $('.search_info_disease_wrap', $this),
+            speed = 400,
+            block = false;
+
+        popup.hide();
+
+        ico.click(function(){
+
+            if(block) return false;
+            block = true;
+
+            popup.fadeToggle(speed, function(){
+
+                block = false;
+            })
+        })
+
+    });
+
+// крестик
+    $(".nameInFo").each(function() {
+
+        var $this = $(this),
+        icoClose = $('.close_filter_second.blue', $this),
+        popup = $('.search_info_disease_wrap', $this),
+        speed = 400,
+        block = false;
+
+        icoClose.click(function(){
+
+            if(block) return false;
+            block = true;
+
+            popup.fadeOut(speed, function(){
+
+                block = false;
+            })
+            return false;
+        })
+    })
+
+// табы в поиске по заболеванию
+
+    $(".tabsBox").each(function() {
+
+        var $this = $(this),
+          tabsControls = $('.sort_disease.radio_style.disease', $this),
+          tabsListLi = $('.tabsContent > li', $this);
+
+      tabsListLi.first().siblings().hide();
+
+      $('label', tabsControls).click(function(){
+        $('input:radio', $(this)).attr('checked', 'checked');
+
+        if ($.browser.msie && $.browser.version < 9.0) {
+
+            if ( $('input:radio, input:checkbox', $(this)).attr('checked') == 'checked' ){
+
+                $(this).addClass('checked').parent().siblings().find('label').removeClass('checked');
+                } else {
+
+                    $(this).removeClass('checked').parent().siblings().find('label').removeClass('checked');
+                }
+            }
+
+
+        var pos = $(this).parent().index();
+        $(this).parent().addClass('active').siblings().removeClass('active');
+        $('.tabsContent > li', $this).eq(pos).css('display', 'block').siblings().hide();
+        return false;
+      })
+
+    })
+
+
+    // $('.popupLink').each(function(){
+
+    //     var $this = $(this)
+    // })
 
 });
