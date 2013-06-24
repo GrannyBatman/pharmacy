@@ -364,7 +364,7 @@ body{
 }
 .arise_box .content {
 	margin: 4px 0 4px 4px;
-	padding: 12px 0px 8px 0px;
+	padding: 12px 0px 5px 0px;
 }
 .category_wrap.first {
 	margin: 9px 0 -10px 6px;
@@ -585,7 +585,7 @@ body{
 	margin-left: 20px;
 }
 .reg_but {
-	margin: 22px 10px 0 0;
+	margin: 22px 0px 0 0;
 }
 .fail_text.wide{
 	width: 100%;
@@ -727,7 +727,7 @@ body{
 	margin: 4px 0 4px 14px;
 }
 .content.disease .separator {
-	margin: 16px 7px 5px -7px;
+	margin: 16px 7px 0px -7px;
 }
 .content.disease .resultDisScroll {
 	margin-left: -8px;
@@ -752,7 +752,7 @@ body{
 	font-size: 13px;
 	background: #2d2d2d;
 	padding: 0;
-	border-left: 10px solid #0000ff;
+	border-left: 10px solid #fff;
 	text-align: center;
 }
 .shopping{
@@ -807,6 +807,7 @@ body{
 	top: 31px;
 	left: -296px;
 	z-index: 15;
+	cursor: default;
 }
 .search_info_disease{
 	background: #edf8f9;
@@ -836,11 +837,12 @@ body{
 .attention_box a {
 	color:#ef018d;
 }
-.attention_box.bottom{
+.attention_box.bottom {
 	color: #2d2d2d;
 	font-family: "Arial";
 	font-size: 12px;
-	margin: 11px 8px 0 24px;
+	margin: 0px 8px 0 24px;
+	padding-bottom: 6px;
 }
 .header_fixed.product .search_form {
 	margin: 0 3px 0 0;
@@ -981,23 +983,23 @@ body{
 .publication h3 {
 	text-align: left;
 }
-.slider .slides li {
+.slider .slides.second li {
 	position: relative;
 	text-align: center;
 	float: left;
 	width: 303px;
-	
+	cursor: pointer;
 }
-.slider .slides li.active img{
+/*.slider .slides li.active img{
 	border:1px solid #49b3bf;
 	padding: 5px;
-}
+}*/
 .publication {
 	position: relative;
 	margin-right: 21px;
 	overflow: hidden;
 }
-.slider .slides {
+.slider .slides.second {
 	width: 9999px;
 }
 .slides_control{
@@ -1015,7 +1017,7 @@ body{
 	display: inline-block;
 	padding: 2px 3px 2px 3px;
 }
-.slides_control li.active a {
+.slides_control li.active a, .slides_control li:hover a{
 	border:1px solid #49b3bf;
 }
 .help_mes{
@@ -1117,4 +1119,13 @@ body{
 }
 .fade_help.white_small.none{
 	right: 0;
+}
+.form_line {
+	margin: 15px 0 0 37px;
+}
+.avtorization_form .reg_but {
+	margin: 37px 0px 0 0;
+}
+.continue_button.reg_but {
+	margin: 35px 10px 10px 0;
 }

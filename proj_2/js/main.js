@@ -22,6 +22,11 @@ $(document).ready(function(){
         myPlacemark = new ymaps.Placemark([55.76, 37.64], { 
             // content: 'Москва!', 
             // balloonContent: 'Столица России' 
+        }, {
+                hideIconOnBalloonOpen: false,
+                iconImageHref: 'ico/map_pin.png',
+                iconImageSize: [35,46]
+
         });
 
         myMap.geoObjects.add(myPlacemark);
@@ -121,7 +126,7 @@ $(document).ready(function(){
         $self.mouseenter(function(){
              blockInt = true;
         })
-        $self.mouseout(function(){
+        $self.mouseleave(function(){
              blockInt = false;
         })
 
@@ -181,37 +186,123 @@ $(document).ready(function(){
 
         var $this = $(this),
           tabsControls = $('.sort_disease.radio_style.disease', $this),
-          tabsListLi = $('.tabsContent > li', $this);
+          tabsListLi = $('.tabsContent > li', $this),
+          attentionBoxBottom = $('.attention_box.bottom', $this);
 
-      tabsListLi.first().siblings().hide();
+        tabsListLi.first().siblings().hide();
+        attentionBoxBottom.hide();
 
-      $('label', tabsControls).click(function(){
-        $('input:radio', $(this)).attr('checked', 'checked');
+        $('label', tabsControls).click(function(){
+            $('input:radio', $(this)).attr('checked', 'checked');
 
-        if ($.browser.msie && $.browser.version < 9.0) {
+            if ($.browser.msie && $.browser.version < 9.0) {
 
-            if ( $('input:radio, input:checkbox', $(this)).attr('checked') == 'checked' ){
+                if ( $('input:radio, input:checkbox', $(this)).attr('checked') == 'checked' ){
 
-                $(this).addClass('checked').parent().siblings().find('label').removeClass('checked');
-                } else {
+                    $(this).addClass('checked').parent().siblings().find('label').removeClass('checked');
+                    } else {
 
-                    $(this).removeClass('checked').parent().siblings().find('label').removeClass('checked');
+                        $(this).removeClass('checked').parent().siblings().find('label').removeClass('checked');
+                    }
                 }
-            }
 
 
-        var pos = $(this).parent().index();
-        $(this).parent().addClass('active').siblings().removeClass('active');
-        $('.tabsContent > li', $this).eq(pos).css('display', 'block').siblings().hide();
-        return false;
-      })
+            var pos = $(this).parent().index();
+            $(this).parent().addClass('active').siblings().removeClass('active');
+            $('.tabsContent > li', $this).eq(pos).css('display', 'block').siblings().hide();
+            return false;
+        })
+
+// всплывашка в низу поиск по заболеванию
+
+        setTimeout(function(){
+
+            attentionBoxBottom.fadeIn(1000)
+        }, 2000);
 
     })
 
+// прыгающая корзина
+    $(".shopping").mouseup(function(event){
+        $(this).css('top', 1);
+    }).mousedown(function(event){
+        $(this).css('top', 2);
+    });
 
-    // $('.popupLink').each(function(){
 
-    //     var $this = $(this)
-    // })
+// исчезновение всплыв инфо по нажатию
+    $('.showBox, .search_info_disease_wrap .close_filter_second').on('click', function(event){
+        $('.search_info_disease_wrap').fadeOut(400);
+    });
+    
+    $('.search_info_disease_wrap, .name_info').on('click', function(event){
+        event.stopPropagation();
+    })
+
+    $('.contentAutorization').each(function(){
+
+        var $this = $(this),
+            registration = $('.registration_button.reg_but', $this),
+            authorization = $('.authorization_button.reg_but', $this),
+            authorizationForm = $('.avtorization_form', $this),
+            regFromSecond = $('.regFromSecond', $this),
+            speed = 400;
+
+        registration.hide();
+        authorization.hide();
+
+        authorizationForm.mouseenter(function(){
+
+            authorization.fadeIn(speed);
+        })
+        authorizationForm.mouseleave(function(){
+
+            authorization.fadeOut(speed);
+        })
+
+        regFromSecond.mouseenter(function(){
+
+            registration.fadeIn(speed);
+        })
+        regFromSecond.mouseleave(function(){
+
+            registration.fadeOut(speed);
+        })
+
+    });
+// ---
+    $('.content_bg_wrap').each(function(){
+
+        var $this = $(this),
+            deliveryList = $('.deliveryList', $this),
+            newMap = $('.newMapSecond', $this),
+            speed = 400;
+
+        newMap.hide();
+
+        // $('label', $this).click(function(){
+        //     $('input:radio', $(this)).attr('checked', 'checked');
+
+        //     var pos = $(this).parent().index();
+        //     $(this).parent().addClass('active').siblings().removeClass('active');
+        //     $('.tabsContent > li', $this).eq(pos).css('display', 'block').siblings().hide();
+        //     return false;
+        // })
+
+         $('label', deliveryList).click(function(){
+            console.log(1);
+
+            // $('.deliveryList > li').addClass('active').siblings().removeClass('active');
+
+            // if($('.deliveryList > li').hasClass('active')){
+
+            //     newMap.fadeIn(speed);
+            // };
+
+            newMap.eq(pos).fadeIn(speed).siblings().fadeOut(speed);
+        })
+
+
+    })
 
 });

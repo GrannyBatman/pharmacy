@@ -510,11 +510,13 @@ $(document).ready(function(){
     })
 
     $(document).on('keyup', function(event) { 
-        if (event.keyCode == 27) {
-          $('.showBox').fadeOut(400);
-          $('.deleted_list').hide();
-          $('.deleted_items .arrow').addClass('up');
-        } 
+      if (event.keyCode == 27) {
+      if ( $('.search_info_disease_wrap').is(":visible") ) return false;
+
+      $('.showBox').fadeOut(400);
+      $('.deleted_list').hide();
+      $('.deleted_items .arrow').addClass('up');
+      } 
     });
 
     $('body').on('click', function(event){
@@ -522,7 +524,18 @@ $(document).ready(function(){
     });
     
     $('.showBox').on('click', function(event){
-      event.stopPropagation();      
+      event.stopPropagation();
+    })
+
+    $('.showBox').each(function(){
+      var $this = $(this),
+          popup = $('.search_info_disease_wrap', $this);
+
+      $(document).on('keyup', function(event){
+        if (event.keyCode == 27) {
+          popup.fadeOut(400);
+        } 
+      })
     })
 
     // Попап + Слайдер в попапе
