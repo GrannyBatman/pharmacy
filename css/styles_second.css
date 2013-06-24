@@ -1129,3 +1129,6 @@ body{
 .continue_button.reg_but {
 	margin: 35px 10px 10px 0;
 }
+.newMapSecond{
+	display: none;
+}

@@ -270,7 +270,7 @@ $(document).ready(function(){
         })
 
     });
-// ---
+// корзина 2-1 шаг---
     $('.content_bg_wrap').each(function(){
 
         var $this = $(this),
@@ -278,31 +278,27 @@ $(document).ready(function(){
             newMap = $('.newMapSecond', $this),
             speed = 400;
 
-        newMap.hide();
-
-        // $('label', $this).click(function(){
-        //     $('input:radio', $(this)).attr('checked', 'checked');
-
-        //     var pos = $(this).parent().index();
-        //     $(this).parent().addClass('active').siblings().removeClass('active');
-        //     $('.tabsContent > li', $this).eq(pos).css('display', 'block').siblings().hide();
-        //     return false;
-        // })
-
-         $('label', deliveryList).click(function(){
+        $('label', deliveryList).click(function(){
             console.log(1);
 
-            // $('.deliveryList > li').addClass('active').siblings().removeClass('active');
+            $(this).parent().addClass('active').siblings().removeClass('active');
+            var pos = $(this).parent().index();
+            console.log(pos);
 
-            // if($('.deliveryList > li').hasClass('active')){
+            if(pos==1 && $(this).parent().hasClass('active')){
 
-            //     newMap.fadeIn(speed);
-            // };
+                newMap.fadeIn(speed);
+            } else{
+                newMap.fadeOut(speed);
+            }
+            // if($('.deliveryList li')){
 
-            newMap.eq(pos).fadeIn(speed).siblings().fadeOut(speed);
+            //     newMap.fadeOut(speed);
+            // }
+            
         })
 
 
-    })
+    });
 
 });
