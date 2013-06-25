@@ -206,7 +206,6 @@ $(document).ready(function(){
                     }
                 }
 
-
             var pos = $(this).parent().index();
             $(this).parent().addClass('active').siblings().removeClass('active');
             $('.tabsContent > li', $this).eq(pos).css('display', 'block').siblings().hide();
@@ -246,6 +245,7 @@ $(document).ready(function(){
             authorization = $('.authorization_button.reg_but', $this),
             authorizationForm = $('.avtorization_form', $this),
             regFromSecond = $('.regFromSecond', $this),
+            block = false;
             speed = 400;
 
         registration.hide();
@@ -253,7 +253,14 @@ $(document).ready(function(){
 
         authorizationForm.mouseenter(function(){
 
-            authorization.fadeIn(speed);
+            if(block) return false;
+            block = true;
+
+            authorization.fadeIn(speed, function(){
+
+                block = false;
+            })
+            return false;
         })
         authorizationForm.mouseleave(function(){
 
@@ -262,7 +269,14 @@ $(document).ready(function(){
 
         regFromSecond.mouseenter(function(){
 
-            registration.fadeIn(speed);
+            if(block) return false;
+            block = true;
+
+            registration.fadeIn(speed, function(){
+
+                block = false;
+            })
+            return false;
         })
         regFromSecond.mouseleave(function(){
 
@@ -291,14 +305,130 @@ $(document).ready(function(){
             } else{
                 newMap.fadeOut(speed);
             }
-            // if($('.deliveryList li')){
-
-            //     newMap.fadeOut(speed);
-            // }
             
         })
 
 
     });
 
+// заполнение формы
+    
+    $('.formReg').each(function(){
+
+        var $this = $(this),
+            name = $('.textName', $this),
+            mail = $('.textMail', $this),
+            phone = $('.textPhone', $this),
+            logMail = $('.textLogMail', $this),
+            textPassword = $('.textPassword', $this),
+            error = 0,
+            authorization = $('.authorization_button.reg_but', $this),
+            authorizationForm = $('.avtorization_form', $this),
+            sendOrder = $('.form_style.small_form.order_form', $this),
+            send = $('.sendOrderReg', $this),
+            sendBlock = $('.wrap_send_order', $this),
+            $wrapSend = $('.wrap_send_box_sec', $this),
+            speed = 400,
+            block = false;
+// скрытие кнопок
+
+        $wrapSend.hide();
+        authorization.hide();
+
+        authorizationForm.mouseenter(function(){
+
+            if(block) return false;
+            block = true;
+
+            authorization.fadeIn(speed, function(){
+
+                block = false;
+            })
+            return false;
+        })
+        authorizationForm.mouseleave(function(){
+
+            authorization.fadeOut(speed);
+        })
+
+        sendOrder.mouseenter(function(){
+
+            if(block) return false;
+            block = true;
+
+            $wrapSend.fadeIn(speed, function(){
+
+                block = false;
+            })
+            return false;
+        })
+        sendOrder.mouseleave(function(){
+
+            $wrapSend.fadeOut(speed);
+        })
+// рег выражения
+        name.on('change blur keyup', function(event){
+
+            (this.value.search(/^[а-я\s]+$/i) === -1 && this.value.search(/^[a-z\s]+$/i) === -1 ) ? $(this).addClass('error') : $(this).removeClass('error');
+        });
+
+        mail.on('change blur keyup', function(event){
+
+            (this.value.search(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i) === -1) ? $(this).addClass('error') : $(this).removeClass('error');
+        });
+
+        phone.on('change blur keyup', function(event){
+
+            (this.value.search(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/) === -1) ? $(this).addClass('error') : $(this).removeClass('error');
+        });
+
+        logMail.on('change blur keyup', function(event){
+
+
+            (this.value.search(/^[a-z\s]+$/i) === -1 && this.value.search(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i) === -1) ? $(this).addClass('error') : $(this).removeClass('error');
+            
+        });
+
+// блокировка кнопки
+        
+        sendOrder.find('.send_order').on('click', function(event){
+            event.preventDefault();
+            var form = $(this).closest('form');
+
+            
+            form.find('input').each(function(){
+                if (this.value === '') $(this).addClass('error');
+            });
+
+            if (form.find('.error').length === 0){                
+
+                form.submit();
+            }
+            
+
+        })
+
+        sendOrder.on('change', function(event){
+            var $arrInput = $('input', sendOrder);
+
+            for(var i = 0; i <= $arrInput.length - 1; i++){
+
+                if( $($arrInput[i]).val() == '' ){
+                    return;
+                }
+
+            }
+
+
+             if ( ($(this).find('.error').length == 0) ){
+                $('.wrap_send_order').removeClass('disabled');
+            }
+
+        })
+        
+
+    });
+
 });
+
+

@@ -15,6 +15,7 @@
 	<script type="text/javascript" src="../js/ajaxupload.js"></script> 
 	
 	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
 	<!-- start mainarea -->
@@ -1732,17 +1733,20 @@
 						<li class="active"><a href="#">КОНТАКТНЫЕ ДАННЫЕ</a></li>
 					</ul>
 
-				<div id="content" class="alt">
+				<div id="content" class="alt formReg">
 					<form action="#" class="form_style small_form order_form">
 						<div>
 							<h3 class="title_big">Оформить заказ без регистрации</h3>
 							<ul class="form_line">
-								<li><span class="inp_text purple">Ваше имя</span><input type="text" /></li>
-								<li><span class="inp_text purple">электронная почта</span><input type="text" /></li>
-								<li><span class="inp_text purple">контактный телефон</span><input type="text" /></li>
+								<li><span class="inp_text purple">Ваше имя</span><input type="text" class="textName" name="name" /></li>
+								<li><span class="inp_text purple">электронная почта</span><input type="text" class="textMail" name="email" /></li>
+								<li><span class="inp_text purple">контактный телефон</span><input type="text" class="textPhone" name="phone" /></li>
 							</ul>
 							<!-- <a href="#" class="button button_big reg_but">ПРОДОЛЖИТЬ</a> -->
-							<a href="#" class="send_order reg_but"></a>
+							<div class="wrap_send_box_sec">
+								<a href="#" class="send_order reg_but sendOrderReg sendBlock"></a>
+								<span class="wrap_send_order disabled"></span>
+							</div>
 							<div class="clear"></div>
 						</div>
 					</form>
@@ -1750,8 +1754,8 @@
 						<div>
 							<h3 class="title_big">Авторизация пользователя</h3>
 							<ul class="form_line">
-								<li><span class="inp_text">логин (электронная почта)</span><input type="text" /></li>
-								<li><span class="inp_text">пароль</span><input type="password" /></li>
+								<li><span class="inp_text">логин (электронная почта)</span><input type="text" class="textLogMail" /></li>
+								<li><span class="inp_text">пароль</span><input type="password" class="textPassword" /></li>
 							</ul>
 							<div class="reg_info purple"><a href="#">Я забыл пароль</a></div>
 							
