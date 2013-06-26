@@ -196,12 +196,9 @@ $(document).ready(function(){
             $('input:radio', $(this)).attr('checked', 'checked');
 
             if ($.browser.msie && $.browser.version < 9.0) {
-
                 if ( $('input:radio, input:checkbox', $(this)).attr('checked') == 'checked' ){
-
                     $(this).addClass('checked').parent().siblings().find('label').removeClass('checked');
                     } else {
-
                         $(this).removeClass('checked').parent().siblings().find('label').removeClass('checked');
                     }
                 }
@@ -277,11 +274,11 @@ $(document).ready(function(){
                 block = false;
             })
             return false;
-        })
+        });
         regFromSecond.mouseleave(function(){
 
             registration.fadeOut(speed);
-        })
+        });
 
     });
 // корзина 2-1 шаг---
@@ -290,23 +287,32 @@ $(document).ready(function(){
         var $this = $(this),
             deliveryList = $('.deliveryList', $this),
             newMap = $('.newMapSecond', $this),
+            $mapShow = $('.mapShow', $this),
             speed = 400;
 
+        // $('label', deliveryList).click(function(){
+
+        //     $(this).parent().addClass('active').siblings().removeClass('active');
+        //     var pos = $(this).parent().index();
+
+        //     if(pos==1 && $(this).parent().hasClass('active')){
+
+        //         newMap.fadeIn(speed);
+        //     } else{
+        //         newMap.fadeOut(speed);
+        //     }
+            
+        // });
+
         $('label', deliveryList).click(function(){
-            console.log(1);
-
             $(this).parent().addClass('active').siblings().removeClass('active');
-            var pos = $(this).parent().index();
-            console.log(pos);
 
-            if(pos==1 && $(this).parent().hasClass('active')){
-
+            if ($mapShow.parent().hasClass('active')){
                 newMap.fadeIn(speed);
-            } else{
+            } else {
                 newMap.fadeOut(speed);
             }
-            
-        })
+        });
 
 
     });
@@ -345,11 +351,11 @@ $(document).ready(function(){
                 block = false;
             })
             return false;
-        })
+        });
         authorizationForm.mouseleave(function(){
 
             authorization.fadeOut(speed);
-        })
+        });
 
         sendOrder.mouseenter(function(){
 
@@ -361,11 +367,11 @@ $(document).ready(function(){
                 block = false;
             })
             return false;
-        })
+        });
         sendOrder.mouseleave(function(){
 
             $wrapSend.fadeOut(speed);
-        })
+        });
 // рег выражения
         name.on('change blur keyup', function(event){
 
@@ -427,6 +433,33 @@ $(document).ready(function(){
         })
         
 
+    });
+
+// табы в оформление заказа
+
+    $(".tabsWrapBasket").each(function() {
+        var $this = $(this),
+            $tabsControls = $('.steps_second', $this),
+            $tabsControlsLi = $('.steps_second li', $this),
+            $tabsListLi = $('.steps_tabs_content > li', $this),
+            $continueButton = $('.continueButton', $this);
+
+        $tabsListLi.first().siblings().hide();
+
+        $('a', $tabsControls).click(function(){
+            var pos = $(this).parent().index();
+            $(this).parent().addClass('active').siblings().removeClass('active').prev().addClass('hover');
+
+            if($(this).parent().hasClass('active')){
+                $(this).parent().next('li').removeClass('hover');
+                $(this).parent().prev('li').addClass('hover');
+            }
+            
+            $('.steps_tabs_content > li', $this).eq(pos).css('display', 'block').siblings().hide();
+            return false;
+        });
+
+        
     });
 
 });
