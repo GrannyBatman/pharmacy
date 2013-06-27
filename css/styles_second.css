@@ -233,6 +233,7 @@ body{
 	background: #f1f1f1;
 	color: #ef018d;
 	font-weight: bold;
+	letter-spacing: -1px;
 }
 .delete_help {
 	margin: 0 9px 0 0;
@@ -393,11 +394,11 @@ body{
 	z-index: 2;
 }
 .breadcrumbs.second {
-	margin: 2px 0 0 0px;
+	margin: 0px 0 0 0px;
 	position: relative;
 	z-index: 2;
 	background: #fff;
-	padding: 0 0 23px 14px;
+	padding: 2px 0 23px 14px;
 }
 .separator {
 	border-top: 1px solid #d5d5d5;
@@ -1218,4 +1219,41 @@ body{
 }
 .close_filter.purple:hover{
 	background-position: -449px 0;
+}
+.deleted_list {
+	border: 1px solid #49b3bf;
+}
+.scroll_box .section_list li {
+	cursor: pointer;
+}
+.deleted_items {
+	width: 215px;
+}
+.delete_one .arrow {
+	right: -3px;
+}
+input[type="checkbox"] + b{
+	background: url(../proj_2/img/img_sprite.png) no-repeat 0 -216px;
+}
+.small_wrap_shadow {
+	background: url(../proj_2/img/bg_sprite.png) repeat-x 0 -379px;
+}
+.sort_disease input[type="radio"] + b {
+	background: url(../proj_2/img/img_sprite.png) no-repeat -141px -163px;
+}
+.radio_style.disease input[type="radio"] + b {
+	top: 4px;
+}
+	
+	.choose_color input[type="radio"] + b {
+		background: url(../proj_2/img/img_sprite.png) no-repeat -139px -50px;
+	}
+	.choose_color_big input[type="radio"] + b {	
+		background: url(../proj_2/img/img_sprite.png) no-repeat -137px -212px;
+	}
+.close_small_popup {
+	background: url(../proj_2/img/img_sprite.png) no-repeat -563px 0;
+}
+.product_view .manufacturer a:hover, .product_view .active_substance a:hover, .review_box a:hover, .size_title a:hover, .favorite_box a:hover, .more_articles a:hover {
+	color: #ef018d;
 }

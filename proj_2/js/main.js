@@ -435,33 +435,6 @@ $(document).ready(function(){
 
     });
 
-// табы в оформление заказа
-
-    $(".tabsWrapBasket").each(function() {
-        var $this = $(this),
-            $tabsControls = $('.steps_second', $this),
-            $tabsControlsLi = $('.steps_second li', $this),
-            $tabsListLi = $('.steps_tabs_content > li', $this),
-            $continueButton = $('.continueButton', $this);
-
-        $tabsListLi.first().siblings().hide();
-
-        $('a', $tabsControls).click(function(){
-            var pos = $(this).parent().index();
-            $(this).parent().addClass('active').siblings().removeClass('active').prev().addClass('hover');
-
-            if($(this).parent().hasClass('active')){
-                $(this).parent().next('li').removeClass('hover');
-                $(this).parent().prev('li').addClass('hover');
-            }
-            
-            $('.steps_tabs_content > li', $this).eq(pos).css('display', 'block').siblings().hide();
-            return false;
-        });
-
-        
-    });
-
 });
 
 
